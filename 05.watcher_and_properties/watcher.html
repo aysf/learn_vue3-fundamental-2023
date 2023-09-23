@@ -14,7 +14,7 @@
         <ul><li v-for="num in listOfNumber">{{ num * Math.random() }}</li></ul>
 
         <h1>Handling event</h1>
-        <h1> {{ countTitle }} </h1>
+        <h1> {{ displayTitle }} </h1>
         <h2>count: {{ count }}</h2>
         <label for="incrementAmount">Increment/decrement by</label><br>
         <input type="number" 
@@ -47,6 +47,15 @@
                 count(newValue) {
                     if (newValue > 20) {
                         this.countTitle += ' very big'
+                    }
+                }
+            },
+            computed: {
+                displayTitle() {
+                    if (this.count > 20) {
+                        return 'Count Standard Very Long'
+                    } else {
+                        return 'Count Standard'
                     }
                 }
             }
