@@ -10,7 +10,16 @@
 
     <div id="app">
         <h1>Characters</h1>
-    <ul><li v-for="char in characters">{{ char.name }}</li></ul>
+
+        <h2>show characters in the list</h2>
+        <ul><li v-for="char in characters">{{ char.name }}</li></ul>
+
+        <h2>show characters in the paragraf</h2>
+        <p>
+            <span v-for="(char, idx) in characters">
+            {{char.name}}{{ idx === characters.length - 1 ? '':', ' }}
+            </span>
+        </p>
     </div>
     
     <script>
@@ -22,6 +31,12 @@
                     },
                     {
                     name: "Zuko"
+                    },
+                    {
+                    name: "Katara"
+                    },
+                    {
+                    name: "Toph"
                     }
                 ]
             })
