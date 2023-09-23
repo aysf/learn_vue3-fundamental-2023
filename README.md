@@ -3,3 +3,4 @@
 ## TODO
 
 1. build your first vue app
+2. exercise
