@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Learn Vue 3</title>
+</head>
+<body>
+    <div id="app">
+        <h1>if/else directive</h1>
+        <p v-if="message.length % 2 === 0">Even: {{ message.toUpperCase() }}</p>
+        <p v-else>Odd: {{ message }}</p>
+
+        <h1>list directive</h1>
+        <ul><li v-for="num in listOfNumber">{{ num * Math.random() }}</li></ul>
+
+        <h1>Handling event</h1>
+        <h2>count: {{ count }}</h2>
+        <label for="incrementAmount">Increment/decrement by</label><br>
+        <input type="number" 
+            v-on:input="changeIncrementAmount"
+            v-bind:value="incrementAmount" />
+        <br><br>
+        <button v-on:click="incrementCount">+</button> 
+        <button v-on:click="decrementCount">-</button>
+    </div>
+    <script>
+        const { createApp } = Vue;
+        const app = createApp({
+            data() {
+                return {
+                    message: 'Hello from vue!!',
+                    listOfNumber: [1,2,3,4],
+                    count: 0,
+                    incrementAmount: 3
+                }
+            },
+            methods: {
+                changeIncrementAmount(e) {
+                    this.incrementAmount = Number(e.target.value)
+                },
+                incrementCount() {
+                    this.count += this.incrementAmount
+                },
+                decrementCount() {
+                    this.count--
+                }
+            }
+        });
+        app.mount("#app");
+    </script>
+</body>
+</html>
