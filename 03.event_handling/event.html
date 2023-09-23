@@ -17,8 +17,10 @@
         <h2>count: {{ count }}</h2>
         <label for="incrementAmount">Increment/decrement by</label><br>
         <input type="number" 
-            v-on:input="changeIncrementAmount"
-            v-bind:value="incrementAmount" />
+            v-model="incrementAmount"
+            //v-on:input="changeIncrementAmount"
+            //v-bind:value="incrementAmount" 
+            >
         <br><br>
         <button v-on:click="incrementCount">+</button> 
         <button v-on:click="decrementCount">-</button>
@@ -35,9 +37,11 @@
                 }
             },
             methods: {
+            /*
                 changeIncrementAmount(e) {
                     this.incrementAmount = Number(e.target.value)
                 },
+            */
                 incrementCount() {
                     this.count += this.incrementAmount
                 },
