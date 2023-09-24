@@ -6,3 +6,5 @@
 2. exercise
 3. event handling
 4. exercise
+5. watcher and computed
+6. exercise
