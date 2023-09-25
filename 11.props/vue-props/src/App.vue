@@ -38,13 +38,19 @@ export default {
           }
         }
     },
+    methods: {
+      changeName() {
+        this.userData.name = "Charlos";
+      }
+    },
     components: { BaseCounter, UserCard }
 }
 </script>
 
 <template>
 
-  <UserCard :user="refinedUserData" />
+  <UserCard :user="refinedUserData" v-on:change-name="changeName"/>
+  
 
   <h1>if/else directive</h1>
   <p v-if="message.length % 2 === 0">Even: {{ message.toUpperCase() }}</p>
