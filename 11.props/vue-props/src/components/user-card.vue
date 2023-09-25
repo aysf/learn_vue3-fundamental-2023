@@ -12,6 +12,6 @@ export default {
 <template>
     <h1>User</h1>
     <p>User: {{ user.name }}</p>
-    <p>Favorite Food: {{ user.favoriteFood }}</p>
+    <p>Favorite Food: {{ user.food }}</p>
 
 </template>

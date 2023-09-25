@@ -30,6 +30,12 @@ export default {
             else {
                 return 'Count Standard';
             }
+        },
+        refinedUserData() {
+          return {
+            name: this.userData.name,
+            food: this.userData.favoriteFood,
+          }
         }
     },
     components: { BaseCounter, UserCard }
@@ -38,7 +44,7 @@ export default {
 
 <template>
 
-  <UserCard :user="userData" />
+  <UserCard :user="refinedUserData" />
 
   <h1>if/else directive</h1>
   <p v-if="message.length % 2 === 0">Even: {{ message.toUpperCase() }}</p>
