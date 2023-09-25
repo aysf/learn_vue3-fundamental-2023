@@ -1,6 +1,11 @@
 <script>
 export default{
-    props: ["charactersParam"],
+    props: {
+        charactersParam: {
+            type: "string",
+            required: true
+        }
+    },
     computed: {
     earthBenderList() {
       return this.characters.filter((char) => char.element.indexOf('Earth') > -1)
