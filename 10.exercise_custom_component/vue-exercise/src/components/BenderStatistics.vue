@@ -2,8 +2,8 @@
 export default{
     props: {
         charactersParam: {
-            type: "string",
-            required: true
+            type: Array,
+            required: true,
         }
     },
     computed: {
