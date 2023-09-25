@@ -1,5 +1,5 @@
 <script>
-import Counter from './components/Counter.vue';
+import BaseCounter from './components/BaseCounter.vue';
 
 export default {
     data() {
@@ -8,12 +8,12 @@ export default {
             listOfNumber: [1, 2, 3, 4]
         };
     },
-    components: { Counter }
+    components: { BaseCounter }
 }
 </script>
 
 <template>
-  <Counter/>
+  <BaseCounter/>
 
   <h1>if/else directive</h1>
   <p v-if="message.length % 2 === 0">Even: {{ message.toUpperCase() }}</p>
