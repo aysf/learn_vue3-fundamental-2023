@@ -7,17 +7,17 @@ export default{
 <template>
     <div class="wrapper">
 
-        <div class="aside">
+        <aside class="aside">
             <slot name="aside"> Aside Default Content </slot>
-        </div>
+        </aside>
 
-        <div class="main">
+        <main class="main">
             <slot name="main">Main Default Content</slot>
-        </div>
+        </main>
 
-        <div class="footer">
+        <footer class="footer">
             <slot name="footer">Footer Default Content</slot>
-        </div>
+        </footer>
 
     </div>
 </template>
