@@ -7,12 +7,17 @@ export default{
         }
     },
     emits: ["favorite"],
+    methods: {
+        favoriteCharacter() {
+            this.$emit("favorite", this.characterProps)
+        }
+    }
 }
 </script>
 
 <template>
     <div>
         <p>{{ characterProps.name }}</p>
-        <button @click="$emit('favorite')">⭐ Favorite</button>
+        <button @click="favoriteCharacter">⭐ Favorite</button>
     </div>
 </template>

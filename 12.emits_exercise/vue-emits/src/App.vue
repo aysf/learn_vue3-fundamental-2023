@@ -33,8 +33,8 @@ export default {
       this.characters.push(this.newCharacter)
       this.newCharacter = { name: '' }
     },
-    favoriteCharacters(char) {
-            this.favoriteList.push(char)
+    addFavoriteCharacters(payload) {
+            this.favoriteList.push(payload)
     }
   },
   components: { BenderStatistics, CharacterCard }
@@ -50,7 +50,7 @@ export default {
   <ul>
     <li v-for="char in characters">
     <!-- placeholder -->
-    <CharacterCard :characterProps="char" @favorite="favoriteCharacters(char)"/>
+    <CharacterCard :characterProps="char" @favorite="addFavoriteCharacters(char)"/>
     </li>
   </ul>
 
