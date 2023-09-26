@@ -55,7 +55,7 @@ export default {
 
   <BaseLayout>
     <template v-slot:aside>This is custom aside content</template>
-    <template v-slot:main>This is custom main content</template>
+    <template #main>This is custom main content</template>
     <template v-slot:footer>This is custom footer content</template>
   </BaseLayout>
 
