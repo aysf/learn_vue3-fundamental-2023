@@ -1,5 +1,6 @@
 <script>
 import BenderStatistics from './components/BenderStatistics.vue'
+import CharacterCard from './components/CharacterCard.vue';
 
 export default {
   data: () => ({
@@ -33,10 +34,10 @@ export default {
       this.newCharacter = { name: '' }
     },
     favoriteCharacters(char) {
-      this.favoriteList.push(char)
+            this.favoriteList.push(char)
     }
   },
-  components: { BenderStatistics }
+  components: { BenderStatistics, CharacterCard }
 }
 </script>
 
@@ -44,7 +45,14 @@ export default {
   <h1>Characters</h1>
 
   <!-- benderstatistics placeholder -->
-  <BenderStatistics :characterProps="characters" />
+  <BenderStatistics :charactersProps="characters" />
+  <h2>show characters in the list</h2>
+  <ul>
+    <li v-for="char in characters">
+    <!-- placeholder -->
+    <CharacterCard :characterProps="char" @favorite="favoriteCharacters(char)"/>
+    </li>
+  </ul>
 
   <h2>show characters in the paragraf</h2>
   <p>

@@ -1,14 +1,14 @@
 <script>
 export default {
   props: {
-    characterProps: {
+    charactersProps: {
       type: Array,
       required: true
     }
   },
   computed: {
     earthBenderList() {
-      return this.characterProps.filter((char) => char.element.indexOf('Earth') > -1)
+      return this.charactersProps.filter((char) => char.element.indexOf('Earth') > -1)
     },
     benderStatistics() {
       const elements = ['Air', 'Earth', 'Fire', 'Water']
@@ -19,7 +19,7 @@ export default {
         Water: 0
       }
 
-      this.characterProps.forEach((char) => {
+      this.charactersProps.forEach((char) => {
         elements.forEach((element) => {
           if (char.element.indexOf(element) > -1) {
             statistics[element] += 1
@@ -38,11 +38,5 @@ export default {
 
   {{ benderStatistics }}
 
-  <h2>show characters in the list</h2>
-  <ul>
-    <li v-for="char in characterProps">
-      <p>{{ char.name }}</p>
-      <button @click="favoriteCharacters(char)">⭐ Favorite</button>
-    </li>
-  </ul>
+
 </template>
